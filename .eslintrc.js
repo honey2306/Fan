@@ -5,6 +5,7 @@ module.exports = {
   },
   parser: 'vue-eslint-parser',
   extends: [
+    'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
     'airbnb-base'
@@ -18,11 +19,25 @@ module.exports = {
     'vue',
     '@typescript-eslint'
   ],
+  globals: {
+    ElMessage: true,
+    ElMessageBox: true
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/']
+      }
+    }
+  },
   rules: {
     indent: ['error', 2],
     semi: ['error', 'never'],
     'comma-dangle': ['error', 'never'],
     'standard/no-callback-literal': 'off',
+    'no-unused-expressions': 'off',
+    'no-param-reassign': 'off',
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/member-delimiter-style': ['error',
@@ -49,6 +64,9 @@ module.exports = {
     'vue/match-component-file-name': 'error',
     'vue/no-v-html': 'off',
     'vue/object-curly-spacing': 'error',
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off'
   }
 }

@@ -17,35 +17,118 @@
       width: 100%;
       height: 100%;
       background-size: cover;
-      background-color: black;
+
+      .content {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .title {
+          transition: 0.5s ease-out;
+          background-color: black;
+          height: 50px;
+          line-height: 50px;
+          color: white;
+          padding: 0 30px;
+          transform: translateY(calc(50vh + 25px));
+        }
+
+        .line {
+          flex: 1;
+          transition: 0.5s ease-in;
+          width: 1px;
+          background-color: #000000;
+
+          &.line-top {
+            margin-bottom: 10px;
+            transform: translateY(-101%);
+          }
+
+          &.line-bottom {
+            margin-top: 10px;
+            transform: translateY(101%);
+          }
+
+          &.hoverOver {
+            transition: 0.1s ease-out;
+          }
+        }
+      }
 
       &:hover {
         .img {
           transform: scale(1.1);
         }
 
-        .title {
-          top: 50%;
+        .content {
+          .title {
+            transform: translateY(0);
+          }
+
+          .line {
+            transform: translateY(0);
+          }
         }
       }
 
       .img {
-        transition: 1s;
+        background-size: cover;
+        transition: .7s ease-out;
         width: 100%;
         height: 100%;
       }
+    }
+
+    .menu {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: #141414;
+      overflow: hidden;
 
       .title {
-        display: inline-block;
-        background-color: black;
-        color: white;
-        padding: 15px 30px;
         position: absolute;
+        top: 30%;
         left: 50%;
-        top: 100%;
-        transition: 0.7s;
         transform: translateX(-50%);
+        color: white;
+        font-size: 2vw;
+        letter-spacing: 8px;
+        text-align: center;
       }
+
+      .menu-wrap {
+        width: 100%;
+        position: absolute;
+        top: 30%;
+        margin-top: 5vh;
+      }
+
+      .menu-item {
+        color: #838383;
+        font-size: 1.3vw;
+        text-align: center;
+        margin-top: 5vh;
+        position: relative;
+
+        &:before {
+          content: '';
+          width: 1px;
+          height: 3.5vh;
+          background-color: #2C2C2C;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          top: -4vh;
+        }
+      }
+
     }
 
     &:nth-child(2) {

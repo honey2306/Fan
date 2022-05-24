@@ -1,13 +1,13 @@
 export const moduleConfig: Array<any> = [{
-  name: 'blog',
+  name: 'BLOG',
   label: '文章'
 }, {
-  name: 'life',
+  name: 'LIFE',
   label: '生活'
 }, {
-  name: 'travel',
+  name: 'TRAVEL',
   label: '足迹'
 }, {
-  name: 'archive',
+  name: 'ARCHIVE',
   label: '归档'
 }]

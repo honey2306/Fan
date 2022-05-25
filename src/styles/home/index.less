@@ -1,5 +1,3 @@
-@import 'daily';
-
 .home-index {
   position: relative;
   width: 100%;
@@ -61,7 +59,7 @@
         }
       }
 
-      &:hover {
+      &:hover, &.active {
         .img {
           transform: scale(1.1);
         }
@@ -111,11 +109,18 @@
       }
 
       .menu-item {
+        transition: 0.5s;
         color: #838383;
         font-size: 1.3vw;
         text-align: center;
         margin-top: 5vh;
         position: relative;
+        cursor: pointer;
+
+        &:hover, &.active {
+          color: white;
+          transform: scale(1.1);
+        }
 
         &:before {
           content: '';
@@ -155,4 +160,10 @@
       }
     }
   }
+
+  .nav-index {
+    display: none;
+  }
 }
+
+@import "small";

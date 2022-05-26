@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { moduleConfig } from './moduleConfig'
 import Nav from '../../components/Nav.vue'
 
@@ -10,6 +10,13 @@ const itemMoveChange = (item: number, status: string) => {
   moverOut.value[item] = status !== 'over'
   menuActiveIndex.value = status === 'over' ? item : -1
 }
+
+const itemShow = ref(false)
+onMounted(() => {
+  setTimeout(() => {
+    itemShow.value = true
+  })
+})
 
 </script>
 
@@ -22,7 +29,7 @@ const itemMoveChange = (item: number, status: string) => {
     >
       <div
         v-if="item !== 1"
-        :class="['item', {'active': menuActiveIndex === item - 2}]"
+        :class="['item', {'active': menuActiveIndex === item - 2, 'show': itemShow}]"
         @mouseout="itemMoveChange(item - 2, 'out')"
         @mouseover="itemMoveChange(item - 2, 'over')"
       >
@@ -39,10 +46,10 @@ const itemMoveChange = (item: number, status: string) => {
         v-else
         class="menu"
       >
-        <div class="title">
+        <div :class="['title', {'show': itemShow}]">
           Fan
         </div>
-        <div class="menu-wrap">
+        <div :class="['menu-wrap', {'show': itemShow}]">
           <div
             v-for="(item1, index) in moduleConfig"
             :key="index"

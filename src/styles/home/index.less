@@ -10,10 +10,11 @@
     overflow: hidden;
 
     .item {
+      transition: 1s ease-out;
       position: relative;
       cursor: pointer;
-      width: 100%;
       height: 100%;
+      width: 0;
       background-size: cover;
 
       .content {
@@ -59,6 +60,13 @@
         }
       }
 
+      .img {
+        background-size: cover;
+        transition: .7s ease-out;
+        width: 100%;
+        height: 100%;
+      }
+
       &:hover, &.active {
         .img {
           transform: scale(1.1);
@@ -75,11 +83,8 @@
         }
       }
 
-      .img {
-        background-size: cover;
-        transition: .7s ease-out;
+      &.show {
         width: 100%;
-        height: 100%;
       }
     }
 
@@ -91,21 +96,31 @@
       overflow: hidden;
 
       .title {
+        transition: 1s;
         position: absolute;
-        top: 30%;
+        top: 100%;
         left: 50%;
         transform: translateX(-50%);
         color: white;
         font-size: 2vw;
         letter-spacing: 8px;
         text-align: center;
+
+        &.show {
+          top: 30%;
+        }
       }
 
       .menu-wrap {
+        transition: 1s;
         width: 100%;
         position: absolute;
-        top: 30%;
+        top: 100%;
         margin-top: 5vh;
+
+        &.show {
+          top: 30%;
+        }
       }
 
       .menu-item {

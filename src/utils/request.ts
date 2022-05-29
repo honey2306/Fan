@@ -27,6 +27,6 @@ export const handle = (defer: Promise<any>, desc: string, showSuc?: boolean, sho
 
   return defer.then((r) => {
     showSuc && ElMessage.success(`${desc}成功`)
-    return r
+    return r.data
   })
 }

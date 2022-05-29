@@ -38,6 +38,7 @@ module.exports = {
     'standard/no-callback-literal': 'off',
     'no-unused-expressions': 'off',
     'no-param-reassign': 'off',
+    'no-underscore-dangle': 'off',
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/member-delimiter-style': ['error',

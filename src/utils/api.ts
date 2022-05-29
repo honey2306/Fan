@@ -14,4 +14,6 @@ const request = (url: string, method: string, data: any = null) => {
   return axios(options)
 }
 
-export const getDailyPic = () => request('home/dailyPic', 'get')
+export const getBlogList = (data: any) => request('blog/list', 'get', data)
+
+export const getBlogDetail = (data: any) => request('blog/detail', 'get', data)

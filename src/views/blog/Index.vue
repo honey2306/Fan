@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 import { handle } from '../../utils/request'
 import { getBlogList } from '../../utils/api'
 import { parseTime } from '../../utils'
+import store from '../../store'
 
 const title = '技术博客'
 const desc = '我们从不生产BUG，我们只是BUG的搬运工'
@@ -32,12 +33,12 @@ const getMore = () => {
 
 onMounted(() => {
   getList()
+  store.commit('setStyle', { backColor: '#888888', color: '#ffffff' })
 })
 
 </script>
 
 <template>
-  <Nav back-color="#888888" />
   <div class="blog-index">
     <list-title
       :desc="desc"

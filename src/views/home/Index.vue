@@ -30,6 +30,7 @@ onMounted(() => {
       <div
         v-if="item !== 1"
         :class="['item', {'active': menuActiveIndex === item - 2, 'show': itemShow}]"
+        @click="$router.push(moduleConfig[item - 2].router)"
         @mouseout="itemMoveChange(item - 2, 'out')"
         @mouseover="itemMoveChange(item - 2, 'over')"
       >
@@ -54,6 +55,7 @@ onMounted(() => {
             v-for="(item1, index) in moduleConfig"
             :key="index"
             :class="['menu-item', {'active': menuActiveIndex === index}]"
+            @click="$router.push(item1.router)"
             @mouseout="itemMoveChange(index, 'out')"
             @mouseover="itemMoveChange(index, 'over')"
           >

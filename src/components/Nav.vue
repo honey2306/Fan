@@ -33,6 +33,7 @@ const showDetail = () => {
     <div
       :style="{color: color || props.color}"
       class="title"
+      @click="$router.push('/')"
     >
       Fan
     </div>

@@ -8,6 +8,7 @@ declare module '@vue/runtime-core' {
     ArticleDetail: typeof import('./src/components/ArticleDetail.vue')['default']
     ArticleList: typeof import('./src/components/ArticleList.vue')['default']
     ListTitle: typeof import('./src/components/ListTitle.vue')['default']
+    MapContainer: typeof import('./src/components/MapContainer.vue')['default']
     Nav: typeof import('./src/components/Nav.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

@@ -14,6 +14,7 @@ import 'prismjs/components/prism-json'
 import App from './App.vue'
 import router from './router'
 import './styles/index.less'
+import store from './store'
 
 // 选择使用主题
 VMdPreview.use(vuepressTheme, {
@@ -22,4 +23,5 @@ VMdPreview.use(vuepressTheme, {
 
 const app = createApp(App)
 app.use(VMdPreview)
+app.use(store)
 app.use(router).mount('#app')
